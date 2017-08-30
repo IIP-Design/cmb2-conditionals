@@ -41,6 +41,19 @@ jQuery( document ).ready( function( $ ) {
 				checkedValues,
 				elmValue;
 
+			// Wordaround - hardcode in until more time can be spent on global solution
+			if(fieldName === 'yali_cb_type') {
+				var selector = "div[data-groupid='yali_cb_type_post_list']";
+				var widget = 	$(selector);
+	
+				if( elm.val() === 'post_list') {
+					widget.show();
+				} else {
+					widget.hide();
+				}
+			}
+			// end wordaround 
+
 			// Is there an element which is conditional on this element ?
 			dependants = CMB2ConditionalsFindDependants( fieldName, elm, conditionContext );
 
